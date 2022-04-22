@@ -4,6 +4,7 @@ const text = document.querySelector('#text');
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
+const resetbtn = document.querySelector('#resetbtn');
 const player = document.querySelector('#player');
 const computer = document.querySelector("#computer") 
 let playerScore = 0;
@@ -16,13 +17,13 @@ function machineChoice() {
     return valueToUse;
 }
 
-// Reset 
+// Reset function
 function reset() {
     playerScore = 0;
     computerScore = 0;
     h1.innerHTML = "Rock, Paper, Scissors!"
-    player.innerHTML = "Player";
-    computer.innerHTML = "Computer";
+    player.innerHTML = "Player:";
+    computer.innerHTML = "Computer:";
     text.innerHTML = "Select One to Challenge Me";
 }
 
@@ -30,58 +31,63 @@ function reset() {
 rock.addEventListener('click', function(){
     if(machineChoice() == 'scissors'){
         h1.innerHTML = "You Won!";
-        text.innerHTML ="I chosed Scissors...";
+        text.innerHTML ="I chose Scissors...";
         playerScore++;
-        player.innerHTML = `Player ${playerScore}`;
+        player.innerHTML = `Player: ${playerScore}`;
         whoWon();
     } else if(machineChoice() == 'paper'){
         h1.innerHTML = "You Lost!";
-        text.innerHTML ="I chosed Paper, noob.";
+        text.innerHTML ="I chose Paper, noob.";
         computerScore++;
-        computer.innerHTML = `Computer ${computerScore}`;
+        computer.innerHTML = `Computer: ${computerScore}`;
         whoWon();
     } else {
         h1.innerHTML = "It's a draw.";
-        text.innerHTML ="I chosed Rock too";
+        text.innerHTML ="I chose Rock too";
     }
 })
 
 paper.addEventListener('click', function(){
     if(machineChoice() == 'rock'){
         h1.innerHTML = "You Won!";
-        text.innerHTML = "I chosed Rock..."
+        text.innerHTML = "I chose Rock..."
         playerScore++;
-        player.innerHTML = `Player ${playerScore}`;
+        player.innerHTML = `Player: ${playerScore}`;
         whoWon();
     } else if(machineChoice() == 'scissors'){
         h1.innerHTML = "You Lost!"
-        text.innerHTML ="I chosed Scissors, noob.";
+        text.innerHTML ="I chose Scissors, noob.";
         computerScore++;
-        computer.innerHTML = `Computer ${computerScore}`;
+        computer.innerHTML = `Computer: ${computerScore}`;
         whoWon();
     } else {
         h1.innerHTML = "It's a draw."
-        text.innerHTML ="I chosed Paper too";
+        text.innerHTML ="I chose Paper too";
     }
 })
 
 scissors.addEventListener('click', function(){
     if(machineChoice() == 'paper'){
         h1.innerHTML = "You Won!";
-        text.innerHTML ="I chosed Paper...";
+        text.innerHTML ="I chose Paper...";
         playerScore++;
-        player.innerHTML = `Player ${playerScore}`;
+        player.innerHTML = `Player: ${playerScore}`;
         whoWon();
     } else if(machineChoice() == 'rock'){
         h1.innerHTML = "You Lost!";
-        text.innerHTML ="I chosed Rock, noob.";
+        text.innerHTML ="I chose Rock, noob.";
         computerScore++;
-        computer.innerHTML = `Computer ${computerScore}`;
+        computer.innerHTML = `Computer: ${computerScore}`;
         whoWon();
     } else {
         h1.innerHTML = "It's a draw.";
-        text.innerHTML ="I chosed Scissors too";
+        text.innerHTML ="I chose Scissors too";
     }
+})
+
+//Reset button
+resetbtn.addEventListener('click', function(){
+    reset();
 })
 
 // Who won? 
