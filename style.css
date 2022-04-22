@@ -4,14 +4,24 @@ div {
     border: 3px solid black;
     padding: 10px;
     background-color: aquamarine;
-    margin-top: 5em;
+    margin-top: 1.5em;
     padding: 2em 0;
 }
 
 .btn {
+    margin-left: 25%;
+    margin-top: 1em;
+    width: 50%;
     padding: 1em;
-    margin: 0 6.7em;
-    margin-top: 3em;
+}
+
+.resetbtn {
+    margin-left: 25%;
+    margin-top: 2em;
+    width: 50%;
+    padding: 1em;
+    background-color: darkred;
+    color: white;
 }
 
 .h1, .text {
@@ -28,7 +38,9 @@ div {
 }
 
 span {
-    margin: 0 9em;
+    margin-left: 25%;
+    margin-top: 1em;
+    width: 50%;
     font-weight: bold;
 }
 
